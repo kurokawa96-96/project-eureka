@@ -56,12 +56,12 @@ export default function Footer() {
                 ))}
               </ul>
             ) : (
-              <p className="mt-4 text-sm text-ivory/50">準備中</p>
+              <p className="mt-4 text-sm text-ivory/60">準備中</p>
             )}
           </div>
         </div>
 
-        <p className="mt-12 border-t border-ivory/15 pt-6 text-xs text-ivory/50">
+        <p className="mt-12 border-t border-ivory/15 pt-6 text-xs text-ivory/60">
           © {new Date().getFullYear()} {site.name}
         </p>
       </div>
