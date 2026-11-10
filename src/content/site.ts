@@ -7,10 +7,14 @@ export const site = {
   description:
     "PROJECT EUREKAは、分野にとらわれず多様なプロジェクトを企画・推進する独立した活動体です。",
 
-  // マスターロゴの参照先(一か所に集約)。
-  // ロゴ素材を public/brand/ に置いたら、ここにパスを入れる。例: "/brand/master-logo.svg"
-  // null の間は、文字によるプレースホルダーを表示する。ロゴの再デザインは行わない。
-  logoSrc: null as string | null,
+  // マスターロゴの参照先(一か所に集約)。ロゴの再デザインは行わない。
+  // 元の画像から背景の白だけを透明にした版を、public/brand/ に置いている。
+  //   logoSrc      明るい背景(アイボリー)の上に置く版(元のインク色)
+  //   logoLightSrc 暗い背景(ネイビー)の上に置く版(アイボリー色)
+  // logoSrc が null の間は、文字によるプレースホルダーを表示する。
+  logoSrc: "/brand/master-logo.png" as string | null,
+  logoLightSrc: "/brand/master-logo-light.png",
+  logoSize: { width: 613, height: 497 }, // 画像の縦横比(表示のずれ防止用)
 
   // 公式SNS。URLが決まったら入れる(空文字の間はリンクを表示しない)。
   sns: {
