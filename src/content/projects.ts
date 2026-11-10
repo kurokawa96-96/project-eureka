@@ -57,6 +57,15 @@ export const projects: Project[] = [
     color: "#A77B91",
     iconSrc: "/brand/icons/ojosama.png",
     summary: "お嬢様という文化的・言語的・歴史的な存在を研究するプロジェクト。",
+    status: "DEVELOPING",
+    purpose:
+      "お嬢様という存在を、歴史・階級・文化・言語・思想・フィクションなど、分野を横断して研究します。キャラクターの紹介にとどまらず、お嬢様という現象そのものを、史実と考察を区別しながら読み解くことを目指しています。",
+    activities: [
+      "歴史・文化・社会思想・言語などの分野ごとに、研究記事を書き、公開していく",
+      "記事どうしのつながりを、ノード型の研究マップで一望できるようにする",
+      "「史実」「研究所の考察」「仮説」を区別して示す",
+    ],
+    externalUrl: "https://ojosama-lab.vercel.app",
   },
   {
     slug: "store-store",
