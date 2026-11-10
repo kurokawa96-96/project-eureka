@@ -1,9 +1,13 @@
 // プロジェクト一覧のデータ。表示側からは、このファイルだけを参照する。
 // 名称・色・概要はブリーフに記載のとおり。
-// status(RESEARCH / CONCEPT / DEVELOPING / ACTIVE / ARCHIVED)が未設定のプロジェクトは、
-// 表示側で「準備中」と出す(statusLabel を使う)。
-// 現時点では、お嬢様研究所以外はほとんど未着手のため「準備中」とする。
-// 各プロジェクトが形になったら、status を設定するだけで表示が切り替わる。
+//
+// 書き足せる項目(すべて任意。書いた項目だけが個別ページに表示される):
+//   status      RESEARCH / CONCEPT / DEVELOPING / ACTIVE / ARCHIVED
+//               未設定の間は「準備中」と表示される
+//   purpose     目的・理念
+//   activities  主な活動内容(箇条書き)
+//   iconSrc     専用アイコンの画像パス。例: "/brand/icons/erabu.svg"
+//   externalUrl 外部サイトのURL
 
 export type ProjectStatus =
   | "RESEARCH"
@@ -19,6 +23,9 @@ export type Project = {
   color: string; // プロジェクトカラー
   summary: string;
   status?: ProjectStatus;
+  purpose?: string;
+  activities?: string[];
+  iconSrc?: string;
   externalUrl?: string;
 };
 
@@ -68,3 +75,7 @@ export const projects: Project[] = [
     summary: "書籍・出版・知的文化に関するプロジェクト。",
   },
 ];
+
+export function getProject(slug: string): Project | undefined {
+  return projects.find((p) => p.slug === slug);
+}
