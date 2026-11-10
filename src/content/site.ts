@@ -22,7 +22,7 @@ export const site = {
 
   // 公式SNS。URLが決まったら入れる(空文字の間はリンクを表示しない)。
   sns: {
-    x: "",
+    x: "https://x.com/projecteureka01",
     instagram: "",
   },
 
