@@ -39,6 +39,7 @@ export const projects: Project[] = [
     slug: "erabu",
     name: "ERABU",
     color: "#315D79",
+    iconSrc: "/brand/icons/erabu.png",
     summary:
       "選挙・政治情報を整理し、有権者が候補者や政策を理解するための情報プラットフォーム。",
   },
@@ -46,6 +47,7 @@ export const projects: Project[] = [
     slug: "nrd",
     name: "NRD",
     color: "#66558B",
+    iconSrc: "/brand/icons/nrd.png",
     summary: "報酬回路を基礎とした人間の行動・心理モデルの研究と応用構想。",
   },
   {
@@ -53,18 +55,21 @@ export const projects: Project[] = [
     name: "お嬢様研究所",
     nameEn: "OJOSAMA RESEARCH INSTITUTE",
     color: "#A77B91",
+    iconSrc: "/brand/icons/ojosama.png",
     summary: "お嬢様という文化的・言語的・歴史的な存在を研究するプロジェクト。",
   },
   {
     slug: "store-store",
     name: "STORE STORE",
     color: "#C17B43",
+    iconSrc: "/brand/icons/store-store.png",
     summary: "商品・流通・販売に関する構想と取り組み。",
   },
   {
     slug: "ludens-foundry",
     name: "LUDENS FOUNDRY",
     color: "#477B68",
+    iconSrc: "/brand/icons/ludens-foundry.png",
     summary:
       "カードゲームやボードゲームなどの作品を、登録・商品化・製造・販売・発送・精算までつなぐプラットフォーム構想。",
   },
@@ -72,6 +77,7 @@ export const projects: Project[] = [
     slug: "books-romana",
     name: "BOOKS ROMANA",
     color: "#865B48",
+    iconSrc: "/brand/icons/books-romana.png",
     summary: "書籍・出版・知的文化に関するプロジェクト。",
   },
 ];
