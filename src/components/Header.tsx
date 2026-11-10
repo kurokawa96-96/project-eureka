@@ -10,9 +10,9 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-navy/10 bg-ivory/95 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-page items-center justify-between px-5 md:px-8">
+      <div className="mx-auto flex h-16 max-w-page items-center justify-between px-5 md:h-20 md:px-8">
         <Link href="/" aria-label="PROJECT EUREKA HOME" onClick={() => setOpen(false)}>
-          <Logo />
+          <Logo heightClass="h-12 md:h-14" />
         </Link>
 
         {/* PC・タブレット */}
