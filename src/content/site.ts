@@ -9,7 +9,7 @@ export const site = {
 
   // 公開するサイトのURL(例: "https://example.com")。ドメインが決まったら入れる。
   // OGP画像のURLを正しく組み立てるために使う。末尾のスラッシュは付けない。
-  url: "",
+  url: "https://project-eureka-nine.vercel.app",
 
   // マスターロゴの参照先(一か所に集約)。ロゴの再デザインは行わない。
   // 元の画像から背景の白だけを透明にした版を、public/brand/ に置いている。
