@@ -109,7 +109,7 @@ export const projects: Project[] = [
     name: "note",
     color: "#5B6770",
     iconSrc: "/brand/icons/note.png",
-    summary: "考えたことや活動の記録を、文章として発信する場所。",
+    summary: "歴史、文化、哲学、社会、心理など、幅広いテーマを扱う随筆・論考の場。日々の発見や知的好奇心から生まれた思考を、自由な視点で綴ります。。",
     status: "active",
     externalUrl: "https://note.com/13k",
     directLink: true,
