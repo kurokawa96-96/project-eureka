@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Markdown from "@/components/Markdown";
-import { getProject } from "@/content/projects";
+import { getProject, projectHref } from "@/content/projects";
 import { getAllPosts, getPost } from "@/lib/journal";
 import { formatDate } from "@/lib/journal-types";
 
@@ -60,7 +60,7 @@ export default async function JournalPostPage({
             {relatedProjects.map((p) => (
               <li key={p.slug}>
                 <Link
-                  href={`/projects/${p.slug}`}
+                  href={projectHref(p)}
                   className="inline-flex items-center gap-2 border border-navy/30 px-3 py-1 text-[0.7rem] tracking-[0.12em] text-navy transition-colors hover:border-navy"
                 >
                   <span
