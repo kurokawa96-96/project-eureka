@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { projects } from "@/content/projects";
+import { hasDetailPage, projects } from "@/content/projects";
 import { site } from "@/content/site";
 import { getAllPosts } from "@/lib/journal";
 
@@ -14,7 +14,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...pages.map((path) => ({ url: `${site.url}${path}` })),
-    ...projects.map((p) => ({ url: `${site.url}/projects/${p.slug}` })),
+       ...projects
+        .filter(hasDetailPage)
+        .map((p) => ({ url: `${site.url}/projects/${p.slug}` })),
     ...getAllPosts().map((post) => ({
       url: `${site.url}/journal/${post.slug}`,
       lastModified: post.date,
