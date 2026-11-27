@@ -5,13 +5,12 @@ import JournalList from "@/components/JournalList";
 import ProjectIcon from "@/components/ProjectIcon";
 import SectionHeader from "@/components/SectionHeader";
 import StatusBadge from "@/components/StatusBadge";
-import { getProject, projects } from "@/content/projects";
-import { getAllPosts, toListItem } from "@/lib/journal";
+import { getProject, hasDetailPage, projects } from "@/content/projects";import { getAllPosts, toListItem } from "@/lib/journal";
 
 type Params = { slug: string };
 
 export function generateStaticParams(): Params[] {
-  return projects.map((p) => ({ slug: p.slug }));
+  return projects.filter(hasDetailPage).map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({
@@ -32,7 +31,7 @@ export default async function ProjectPage({
 }) {
   const { slug } = await params;
   const project = getProject(slug);
-  if (!project) notFound();
+   if (!project || !hasDetailPage(project)) notFound();
 
   const related = getAllPosts()
     .filter((p) => p.projects.includes(project.slug))
