@@ -8,6 +8,8 @@
 //   activities  主な活動内容(任意。箇条書き)
 //   iconSrc     専用アイコンの画像パス。例: "/brand/icons/erabu.svg"
 //   externalUrl 外部サイトのURL(任意)
+//   directLink  true のとき、個別ページを作らず、カードから externalUrl へ直接移動する
+//               (externalUrl が必要。noteのように、外部サービスへ案内するプロジェクト用)
 
 import { statusDefinitions, type ProjectStatus } from "@/content/status";
 
@@ -22,7 +24,20 @@ export type Project = {
   activities?: string[];
   iconSrc?: string;
   externalUrl?: string;
+  directLink?: boolean;
 };
+
+// 個別ページを持つか。directLink(外部へ直接移動)のプロジェクトは持たない。
+export function hasDetailPage(project: Project): boolean {
+  return !(project.directLink && project.externalUrl);
+}
+
+// カードや関連リンクの移動先。個別ページがなければ外部サイトへ直接。
+export function projectHref(project: Project): string {
+  return hasDetailPage(project)
+    ? `/projects/${project.slug}`
+    : (project.externalUrl as string);
+}
 
 // 一覧・個別ページで表示するステータス文言(日本語表記)。
 export function statusLabel(project: Project): string {
@@ -88,6 +103,16 @@ export const projects: Project[] = [
     iconSrc: "/brand/icons/books-romana.png",
     summary: "書籍・出版・知的文化に関するプロジェクト。",
     status: "ready",
+  },
+  {
+    slug: "note",
+    name: "note",
+    color: "#5B6770",
+    iconSrc: "/brand/icons/note.png",
+    summary: "考えたことや活動の記録を、文章として発信する場所。",
+    status: "active",
+    externalUrl: "https://note.com/13k",
+    directLink: true,
   },
 ];
 
